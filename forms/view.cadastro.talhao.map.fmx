@@ -1,0 +1,207 @@
+object ViewCadastroTalhaoMap: TViewCadastroTalhaoMap
+  Left = 0
+  Top = 0
+  ClientHeight = 584
+  ClientWidth = 376
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnShow = FormShow
+  DesignerMasterStyle = 0
+  object rectHeader: TRectangle
+    Align = Top
+    Size.Width = 376.000000000000000000
+    Size.Height = 56.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Kind = None
+    object btnVoltar: TButton
+      Align = Left
+      Margins.Left = 4.000000000000000000
+      Margins.Top = 4.000000000000000000
+      Margins.Bottom = 4.000000000000000000
+      Position.X = 4.000000000000000000
+      Position.Y = 4.000000000000000000
+      Size.Width = 56.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'buttonstyle'
+      Text = 'Voltar'
+      TextSettings.Trimming = None
+      OnClick = btnVoltarClick
+    end
+    object lblTitulo: TLabel
+      Align = Client
+      Size.Width = 240.000000000000000000
+      Size.Height = 56.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.HorzAlign = Center
+      Text = 'Novo Talh'#227'o'
+    end
+    object btnSalvar: TButton
+      Align = Right
+      Margins.Top = 4.000000000000000000
+      Margins.Right = 4.000000000000000000
+      Margins.Bottom = 4.000000000000000000
+      Position.X = 300.000000000000000000
+      Position.Y = 4.000000000000000000
+      Size.Width = 72.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'buttonstyle'
+      Text = 'Salvar'
+      TextSettings.Trimming = None
+      OnClick = btnSalvarClick
+    end
+  end
+  object rectInfoBar: TRectangle
+    Align = Top
+    Position.Y = 56.000000000000000000
+    Size.Width = 376.000000000000000000
+    Size.Height = 36.000000000000000000
+    Size.PlatformDefault = False
+    object lblPontos: TLabel
+      Align = Left
+      Margins.Left = 4.000000000000000000
+      Position.X = 4.000000000000000000
+      Size.Width = 80.000000000000000000
+      Size.Height = 36.000000000000000000
+      Size.PlatformDefault = False
+      Text = '0 pontos'
+    end
+    object lblPerimetro: TLabel
+      Align = Left
+      Position.X = 84.000000000000000000
+      Size.Width = 150.000000000000000000
+      Size.Height = 36.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Parametro: 0.00 km'
+    end
+    object lblArea: TLabel
+      Align = Client
+      Size.Width = 142.000000000000000000
+      Size.Height = 36.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'A'#129'rea: 0.00 ha'
+    end
+  end
+  object mapView: TMapView
+    Align = Client
+    Size.Width = 376.000000000000000000
+    Size.Height = 250.000000000000000000
+    Size.PlatformDefault = False
+    MapType = Satellite
+    OnMarkerDragStart = mapViewMarkerDragStart
+    OnMarkerDragEnd = mapViewMarkerDragEnd
+  end
+  object rectToolbar: TRectangle
+    Align = Bottom
+    Position.Y = 342.000000000000000000
+    Size.Width = 376.000000000000000000
+    Size.Height = 52.000000000000000000
+    Size.PlatformDefault = False
+    object btnDesfazer: TButton
+      Align = Left
+      Margins.Left = 4.000000000000000000
+      Margins.Right = 4.000000000000000000
+      Position.X = 4.000000000000000000
+      Size.Width = 70.000000000000000000
+      Size.Height = 52.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'buttonstyle'
+      Text = 'Desfazer'
+      TextSettings.Trimming = None
+      OnClick = btnDesfazerClick
+    end
+    object btnLimpar: TButton
+      Align = Left
+      Margins.Right = 4.000000000000000000
+      Position.X = 78.000000000000000000
+      Size.Width = 65.000000000000000000
+      Size.Height = 52.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'buttonstyle'
+      Text = 'Limpar'
+      TextSettings.Trimming = None
+      OnClick = btnLimparClick
+    end
+    object btnFecharPoly: TButton
+      Align = Client
+      Margins.Right = 4.000000000000000000
+      Size.Width = 169.000000000000000000
+      Size.Height = 52.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'buttonstyle'
+      Text = 'Fechar Poligono'
+      TextSettings.Trimming = None
+      OnClick = btnFecharPolyClick
+    end
+    object btnGPS: TButton
+      Align = Right
+      Margins.Right = 4.000000000000000000
+      Position.X = 320.000000000000000000
+      Size.Width = 52.000000000000000000
+      Size.Height = 52.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'buttonstyle'
+      Text = 'GPS'
+      TextSettings.Trimming = None
+      OnClick = btnGPSClick
+    end
+  end
+  object rectPainelDados: TRectangle
+    Align = Bottom
+    Position.Y = 394.000000000000000000
+    Size.Width = 376.000000000000000000
+    Size.Height = 190.000000000000000000
+    Size.PlatformDefault = False
+    object layoutDados: TLayout
+      Align = Contents
+      Padding.Left = 16.000000000000000000
+      Padding.Top = 10.000000000000000000
+      Padding.Right = 16.000000000000000000
+      Padding.Bottom = 10.000000000000000000
+      Size.Width = 376.000000000000000000
+      Size.Height = 190.000000000000000000
+      Size.PlatformDefault = False
+      object edtNome: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Top
+        Position.X = 16.000000000000000000
+        Position.Y = 10.000000000000000000
+        Margins.Bottom = 8.000000000000000000
+        Size.Width = 344.000000000000000000
+        Size.Height = 44.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object edtGrupo: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Top
+        Position.X = 16.000000000000000000
+        Position.Y = 62.000000000000000000
+        Margins.Bottom = 8.000000000000000000
+        Size.Width = 344.000000000000000000
+        Size.Height = 44.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object memoDescricao: TMemo
+        Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+        DataDetectorTypes = []
+        Align = Client
+        Size.Width = 344.000000000000000000
+        Size.Height = 66.000000000000000000
+        Size.PlatformDefault = False
+        Viewport.Width = 340.000000000000000000
+        Viewport.Height = 62.000000000000000000
+      end
+    end
+  end
+  object locSensor: TLocationSensor
+    ActivityType = Other
+    UsageAuthorization = WhenInUse
+    OnLocationChanged = locSensorLocationChanged
+    Left = 296
+    Top = 112
+  end
+end

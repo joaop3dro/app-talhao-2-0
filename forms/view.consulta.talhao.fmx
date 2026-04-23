@@ -1,0 +1,145 @@
+object viewConsultaTalhao: TviewConsultaTalhao
+  Left = 0
+  Top = 0
+  Caption = 'Talh'#195#181'es Cadastrados'
+  ClientHeight = 580
+  ClientWidth = 376
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop, iPhone, iPad]
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnShow = FormShow
+  DesignerMasterStyle = 0
+  object rectHeader: TRectangle
+    Align = Top
+    Size.Width = 376.000000000000000000
+    Size.Height = 56.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Kind = None
+    object btnVoltar: TButton
+      Align = Left
+      Margins.Left = 4.000000000000000000
+      Margins.Top = 4.000000000000000000
+      Margins.Right = 4.000000000000000000
+      Margins.Bottom = 4.000000000000000000
+      Position.X = 4.000000000000000000
+      Position.Y = 4.000000000000000000
+      Size.Width = 56.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'buttonstyle'
+      Text = 'Voltar'
+      TextSettings.Trimming = None
+      OnClick = btnVoltarClick
+    end
+    object lblTitulo: TLabel
+      Align = Center
+      Size.Width = 264.000000000000000000
+      Size.Height = 56.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.HorzAlign = Center
+      Text = 'Talh'#245'es'
+    end
+    object btnNovo: TButton
+      Align = Right
+      Margins.Left = 4.000000000000000000
+      Margins.Top = 4.000000000000000000
+      Margins.Right = 4.000000000000000000
+      Margins.Bottom = 4.000000000000000000
+      Position.X = 316.000000000000000000
+      Position.Y = 4.000000000000000000
+      Size.Width = 56.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'buttonstyle'
+      Text = 'Novo'
+      TextSettings.Trimming = None
+      OnClick = btnNovoClick
+    end
+  end
+  object rectFiltros: TRectangle
+    Align = Top
+    Padding.Left = 12.000000000000000000
+    Padding.Top = 8.000000000000000000
+    Padding.Right = 12.000000000000000000
+    Padding.Bottom = 8.000000000000000000
+    Position.Y = 56.000000000000000000
+    Size.Width = 376.000000000000000000
+    Size.Height = 100.000000000000000000
+    Size.PlatformDefault = False
+    object edtBusca: TSearchBox
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      Align = Top
+      Position.X = 12.000000000000000000
+      Position.Y = 8.000000000000000000
+      Margins.Bottom = 8.000000000000000000
+      Size.Width = 352.000000000000000000
+      Size.Height = 40.000000000000000000
+      Size.PlatformDefault = False
+      TextPrompt = 'Buscar Talh'#245'es'
+      OnChange = edtBuscaChange
+    end
+    object cmbGrupo: TComboBox
+      Align = Top
+      Position.X = 12.000000000000000000
+      Position.Y = 56.000000000000000000
+      Size.Width = 352.000000000000000000
+      Size.Height = 40.000000000000000000
+      Size.PlatformDefault = False
+      OnChange = cmbGrupoChange
+    end
+  end
+  object listViewTalhoes: TListView
+    ItemAppearanceClassName = 'TListItemRightDetailAppearance'
+    ItemEditAppearanceClassName = 'TEmptyItemObjects'
+    HeaderAppearanceClassName = 'TListHeaderObjects'
+    FooterAppearanceClassName = 'TListHeaderObjects'
+    Align = Client
+    Size.Width = 376.000000000000000000
+    Size.Height = 424.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    OnItemClick = listViewTalhoesItemClick
+  end
+  object rectVazio: TRectangle
+    Align = Client
+    Size.Width = 50.000000000000000000
+    Size.Height = 50.000000000000000000
+    Size.PlatformDefault = False
+    Visible = False
+    object lblVazio: TLabel
+      Align = Top
+      Margins.Top = 120.000000000000000000
+      Position.Y = 120.000000000000000000
+      Size.Width = 50.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      Text = #240#376#338#190
+    end
+    object lblVazioDesc: TLabel
+      Align = Top
+      Margins.Top = 16.000000000000000000
+      Position.Y = 184.000000000000000000
+      Size.Width = 50.000000000000000000
+      Size.Height = 60.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Nenhum talh'#195#163'o cadastrado ainda.'
+    end
+    object btnNovoPrimeiro: TButton
+      Align = Top
+      Margins.Left = 60.000000000000000000
+      Margins.Top = 24.000000000000000000
+      Margins.Right = 60.000000000000000000
+      Position.X = 60.000000000000000000
+      Position.Y = 268.000000000000000000
+      Size.Width = 0.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'buttonstyle'
+      Text = '+ Cadastrar primeiro talh'#195#163'o'
+      TextSettings.Trimming = None
+      OnClick = btnNovoPrimeiroClick
+    end
+  end
+end
